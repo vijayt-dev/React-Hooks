@@ -15,18 +15,18 @@ function CounterMemo() {
     //     console.log("Render")
     //     return countOne % 2 === 0
     // },[countOne])
-function isEven() {
-    console.log("Render")
-    return countOne % 2 === 0
-}
-   const isEvenCall = useCallback(() => isEven(),[countOne])
+
+const isEvenCall = useCallback(() =>  {   
+   console.log("Render")
+   return countOne % 2 === 0 ? "Even" : "Odd"
+},[countOne])
   return (
     <div>
         <h1>Count1 {countOne}</h1>
-        <button onClick={() => incrementOne()}>Increment</button>
-        {isEvenCall ? "Even" : "Odd"}
+        <button onClick={incrementOne}>Increment</button>
+        {isEvenCall()}
         <h1>Count2 {countTwo}</h1>
-        <button onClick={() => incrementTwo()}>Increment</button>
+        <button onClick={incrementTwo}>Increment</button>
         <button onClick={() => setToggle(!toggle)}>Toggle</button>
         {toggle && <p>Toggle</p>}
 
