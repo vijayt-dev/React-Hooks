@@ -24,11 +24,6 @@ function Data() {
         <ul>
             
             {
-                /*
-                posts.map((value) => {
-                   return <li key={value.id}>{value.title}</li>
-                })
-                */
                <li key={posts.id}>{posts.title}</li>
             }
         </ul>
